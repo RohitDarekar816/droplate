@@ -5,7 +5,8 @@ steps:
   - name: deploy_droplet
     image: curlimages/curl:latest
     environment:
-      DO_TOKEN: "dop_v1_799960be939c8bd5a06b1d7d57e82c5436377071ab376d019448fa941e1df753"  # Hardcoded token for testing
+      DO_TOKEN:
+        from_secret: do_token  # This pulls the secret from Drone secrets
     commands:
       - |
         curl -X POST "https://api.digitalocean.com/v2/droplets" \
@@ -15,6 +16,6 @@ steps:
 
 trigger:
   event:
-    - push  # Trigger on push event
+    - push  # Trigger the pipeline on push events
   branch:
-    - main  # Only trigger on the main branch
+    - main  # Only trigger the pipeline for changes to the main branch
