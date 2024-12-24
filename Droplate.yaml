@@ -1,0 +1,20 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: deploy_droplet
+    image: curlimages/curl:latest
+    environment:
+      DO_TOKEN: "dop_v1_799960be939c8bd5a06b1d7d57e82c5436377071ab376d019448fa941e1df753"  # Hardcoded token for testing
+    commands:
+      - |
+        curl -X POST "https://api.digitalocean.com/v2/droplets" \
+          -d '{"name":"My-Droplet","region":"nyc3","size":"s-1vcpu-1gb","image":"ubuntu-20-04-x64"}' \
+          -H "Authorization: Bearer ${DO_TOKEN}" \
+          -H "Content-Type: application/json"
+
+trigger:
+  event:
+    - push  # Trigger on push event
+  branch:
+    - main  # Only trigger on the main branch
