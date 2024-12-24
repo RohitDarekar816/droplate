@@ -6,7 +6,7 @@ steps:
     image: curlimages/curl:latest
     environment:
       DO_TOKEN:
-        from_token: do_token
+        from_secret: do_token  # Use the secret for the token
     commands:
       - |
         curl -X POST "https://api.digitalocean.com/v2/droplets" \
@@ -16,6 +16,6 @@ steps:
 
 trigger:
   event:
-    - push  # Trigger the pipeline on push events
+    - push
   branch:
-    - main  # Only trigger the pipeline for changes to the main branch
+    - main
