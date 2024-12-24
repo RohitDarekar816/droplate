@@ -6,7 +6,7 @@ steps:
     image: curlimages/curl:latest
     environment:
       DO_TOKEN:
-        from_secret: do_token  # This pulls the secret from Drone secrets
+        from_secret: do_token
     commands:
       - |
         curl -X POST "https://api.digitalocean.com/v2/droplets" \
