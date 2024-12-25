@@ -2,7 +2,7 @@ import requests
 import json
 
 # Replace with your DigitalOcean API token
-API_TOKEN = 'dop_v1_e50ce8a9d21a1666d4ecf6797ceebdb283ca19a1f37ffe845db91e52f65b05f8'
+API_TOKEN = 'dop_v1_e51dd47526522ac1cee9dff7afec806cf8485222fb721bbf72855c2959d24ef6'
 
 # Set the headers for the API request
 headers = {
