@@ -2,12 +2,30 @@ kind: pipeline
 name: default
 
 steps:
-  - name: deploy_droplet
+  - name: install_dependencies
     image: python:3.8
     commands:
       - pip install requests
       - pip install simplejson
-      - python digitalocean.py
+
+  - name: deploy_droplet
+    image: curlimages/curl
+    commands:
+      - curl --request POST \
+        --url https://api.linode.com/v4/linode/instances \
+        --header 'accept: application/json' \
+        --header 'authorization: Bearer e5512155d41c2179243c43aed2aa93d6b0441e607de6efba7aef64d9af8f2df6' \
+        --header 'content-type: application/json' \
+        --data '{
+          "booted": true,
+          "interfaces": [
+            {
+              "primary": true,
+              "purpose": "public"
+            }
+          ],
+          "swap_size": 512
+        }'
 
 trigger:
   event:
