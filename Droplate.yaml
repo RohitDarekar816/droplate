@@ -5,6 +5,8 @@ steps:
   - name: deploy_droplet
     image: python:3.8
     commands:
+      - pip install requests
+      - pip install json
       - python digitalocean.py
 
 trigger:
