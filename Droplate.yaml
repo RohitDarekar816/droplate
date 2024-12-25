@@ -10,8 +10,6 @@ steps:
   - name: deploy_droplet
     image: curlimages/curl
     commands:
-      - echo "DIGITALOCEAN_TOKEN: $DIGITALOCEAN_TOKEN"
-      
       - |
         curl -X POST \
           -H "Content-Type: application/json" \
