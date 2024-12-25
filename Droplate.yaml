@@ -9,10 +9,7 @@ steps:
         from_secret: do_token  # Use the secret for the token
     commands:
       - |
-        curl -X POST "https://api.digitalocean.com/v2/droplets" \
-          -d '{"name":"My-Droplet","region":"nyc3","size":"s-1vcpu-1gb","image":"ubuntu-20-04-x64"}' \
-          -H "Authorization: Bearer dop_v1_ce737b415e549abbc98d8b49eb416d73ad7cfab804a34913d7e35e0767c6ee4d" \
-          -H "Content-Type: application/json"
+        curl -X POST "https://api.digitalocean.com/v2/droplets" \ -d '{"name":"My-Droplet","region":"nyc3","size":"s-1vcpu-1gb","image":"ubuntu-20-04-x64"}' \ -H "Authorization: Bearer ${DO_TOKEN}" \ -H "Content-Type: application/json"
 
 trigger:
   event:
