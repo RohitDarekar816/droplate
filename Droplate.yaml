@@ -13,7 +13,7 @@ steps:
       - |
         curl -X POST \
           -H "Content-Type: application/json" \
-          -H "Authorization: Bearer $DIGITALOCEAN_TOKEN" \
+          -H "Authorization: Bearer dop_v1_019baae72b0cd0329f43af80747079b5776aa9cdf89a59e643a31df045c54b77" \
           -d '{
             "name": "example.com",
             "region": "nyc3",
