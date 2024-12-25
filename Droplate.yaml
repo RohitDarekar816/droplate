@@ -6,7 +6,7 @@ steps:
     image: python:3.8
     commands:
       - pip install requests
-      - pip install json
+      - pip install simplejson
       - python digitalocean.py
 
 trigger:
