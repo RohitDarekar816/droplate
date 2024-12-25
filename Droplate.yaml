@@ -11,21 +11,22 @@ steps:
   - name: deploy_droplet
     image: curlimages/curl
     commands:
-      - curl --request POST \
-         -url https://api.linode.com/v4/linode/instances \
-         -header 'accept: application/json' \
-         -header 'authorization: Bearer e5512155d41c2179243c43aed2aa93d6b0441e607de6efba7aef64d9af8f2df6' \
-         -header 'content-type: application/json' \
-        --data '{
-          "booted": true,
-          "interfaces": [
-            {
-              "primary": true,
-              "purpose": "public"
-            }
-          ],
-          "swap_size": 512
-        }'
+      - |
+        curl --request POST \
+          --url https://api.linode.com/v4/linode/instances \
+          --header 'accept: application/json' \
+          --header 'authorization: Bearer $LINODE_API_KEY' \
+          --header 'content-type: application/json' \
+          --data '{
+            "booted": true,
+            "interfaces": [
+              {
+                "primary": true,
+                "purpose": "public"
+              }
+            ],
+            "swap_size": 512
+          }'
 
 trigger:
   event:
