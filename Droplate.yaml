@@ -5,6 +5,7 @@ name: default
 
 token:
   from_secret: token
+
 server:
   image: docker-18-04
   size: s-1vcpu-1gb
@@ -13,7 +14,7 @@ server:
 steps:
 - name: greeting
   commands:
-  - echo hello world!! This is rohit
+  - echo hello world!! This is rohit and this is m pipeline
 trigger:
   event:
     - push
