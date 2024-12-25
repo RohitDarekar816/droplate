@@ -2,7 +2,7 @@ import requests
 import json
 
 # Replace with your DigitalOcean API token
-API_TOKEN = 'dop_v1_19a29a45570a4205af22e5f5f489d681b22596d66d08bffd8af8b9d66a1ae243'
+API_TOKEN = 'dop_v1_e50ce8a9d21a1666d4ecf6797ceebdb283ca19a1f37ffe845db91e52f65b05f8'
 
 # Set the headers for the API request
 headers = {
@@ -12,10 +12,10 @@ headers = {
 
 # Define the droplet configuration
 droplet_data = {
-    "name": "example-droplet",
-    "region": "nyc3", # Region where the droplet will be created
-    "size": "s-1vcpu-1gb", # Droplet size
-    "image": "ubuntu-20-04-x64", # Image to use for the droplet
+    "name": "Test Droplet",
+    "region": "sfo3", # Region where the droplet will be created
+    "size": "s-1vcpu-512mb-10gb", # Droplet size
+    "image": "ubuntu-24-10-x64", # Image to use for the droplet
     "ssh_keys": [], # Optional: List of SSH key fingerprints or IDs
     "backups": False, # Optional: Enable backups
     "ipv6": True, # Optional: Enable IPv6
