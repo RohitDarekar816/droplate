@@ -2,7 +2,7 @@ import requests
 import json
 
 # Replace with your DigitalOcean API token
-API_TOKEN = 'dop_v1_0703901493963f342fbf84e8da1bf4345e0fd936f08f2474ba490d04902c7d02'
+API_TOKEN = 'dop_v1_bca16ed397adfd4b3d119c148f8cf1bf366f256f989ac594037fb2feda7114bc'
 
 # Set the headers for the API request
 headers = {
@@ -12,7 +12,7 @@ headers = {
 
 # Define the droplet configuration
 droplet_data = {
-    "name": "example-droplet",
+    "name": "Test-droplet",
     "region": "nyc3", # Region where the droplet will be created
     "size": "s-1vcpu-1gb", # Droplet size
     "image": "ubuntu-20-04-x64", # Image to use for the droplet
