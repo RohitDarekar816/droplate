@@ -3,16 +3,9 @@ name: default
 
 steps:
   - name: deploy_droplet
-    image: curlimages/curl:latest
-    environment:
-      DO_TOKEN:
-        from_secret: do_token  # Use the secret for the token
+    image: python:3.8
     commands:
-      - |
-        curl -X POST "https://api.digitalocean.com/v2/droplets" \
-          -d '{"name":"My-Droplet","region":"nyc3","size":"s-1vcpu-1gb","image":"ubuntu-20-04-x64"}' \
-          -H "Authorization: Bearer dop_v1_19a29a45570a4205af22e5f5f489d681b22596d66d08bffd8af8b9d66a1ae243" \
-          -H "Content-Type: application/json"
+        -python digitalocean.py
 
 trigger:
   event:
