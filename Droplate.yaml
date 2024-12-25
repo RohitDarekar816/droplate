@@ -1,7 +1,7 @@
 ---
 kind: pipeline
 type: digitalocean
-name: deploy_droplet
+name: default
 
 token:
   from_secret: token
