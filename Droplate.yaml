@@ -5,7 +5,7 @@ steps:
   - name: deploy_droplet
     image: python:3.8
     commands:
-        -python digitalocean.py
+      - python digitalocean.py
 
 trigger:
   event:
