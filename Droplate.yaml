@@ -11,7 +11,7 @@ steps:
       - |
         curl -X POST "https://api.digitalocean.com/v2/droplets" \
           -d '{"name":"My-Droplet","region":"nyc3","size":"s-1vcpu-1gb","image":"ubuntu-20-04-x64"}' \
-          -H "Authorization: Bearer ${DO_TOKEN}" \
+          -H "Authorization: Bearer dop_v1_0122e7541e1172350ea0be69dafc340c0811ff8ec98ccd2f44e4a4cb782591c4" \
           -H "Content-Type: application/json"
 
 trigger:
