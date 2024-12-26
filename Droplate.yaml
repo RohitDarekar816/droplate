@@ -14,7 +14,7 @@ server:
 steps:
 - name: greeting
   commands:
-  - python /drone/src/.git/digitalocean.py
+  - python /tmp/drone-${RANDOM}/drone/src/digitalocean.py
 
 trigger:
   event:
