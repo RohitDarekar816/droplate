@@ -15,7 +15,7 @@ steps:
 - name: greeting
   commands:
   - echo hello world!! This is rohit and this is m pipeline
-  - ping 51.77.109.157
+  - ping 24.199.127.59
 trigger:
   event:
     - push
