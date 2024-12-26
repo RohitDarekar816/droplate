@@ -14,7 +14,11 @@ server:
 steps:
 - name: greeting
   commands:
-  - python /tmp/drone-${RANDOM}/drone/src/digitalocean.py
+  - git clone https://github.com/RohitDarekar816/droplate.git
+  - ls
+  - cd droplate
+  - sudo apt install python3
+  - python3 digitalocean.py
 
 trigger:
   event:
